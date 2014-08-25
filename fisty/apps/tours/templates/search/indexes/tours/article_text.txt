@@ -1,0 +1,6 @@
+{{ object.title }}
+{{ object.date_created }}
+{{ object.date_last_modified }}
+{{ object.preview }}
+{{ object.content }}
+{{ object.slug }}

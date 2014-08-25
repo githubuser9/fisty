@@ -1,0 +1,45 @@
+<div ng-controller="MainCtrl">
+
+    <div ng-repeat="post in data">
+
+        <h2>
+            <a href="#/{$ post.slug $}-{$ post.id $}">{$ post.title $}</a>
+        </h2>
+
+        <p>
+            <span>{$ post.date_created | date:"MM/dd/yyyy @ H:mm"$}</span>
+        </p>
+
+        <hr>
+
+        <img ng-src="{$ post.image ? ('/media/' + post.image) : null $}" width="550"/>
+
+        <hr>
+
+        <div class="body" ng-bind-html="post.preview">
+        </div>
+
+        <div class="read-full">
+            <a class="btn btn-default" href="#/{$ post.slug $}-{$ post.id $}">Читать</a>
+        </div>
+
+
+        <br/>
+    </div>
+
+    <ul class="pager">
+
+        <div ng-if="next && previous">
+            <li class="previous"><a ng-click='previousPage()' href="#">&larr; Назад</a></li>
+            <li class="next"><a ng-click='nextPage()' href="#">&larr; Дальше</a></li>
+        </div>
+        <div ng-if="previous && !next">
+            <li class="previous"><a ng-click='previousPage()' ng-href="#/">&larr; Назад</a></li>
+        </div>
+        <div ng-if="next && !previous">
+            <li class="next"><a ng-click='nextPage()' ng-href="#/">Дальше &rarr;</a></li>
+        </div>
+
+    </ul>
+
+</div>

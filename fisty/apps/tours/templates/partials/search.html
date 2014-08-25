@@ -1,0 +1,11 @@
+<div ng-controller="SearchCtrl">
+
+    <div ng-repeat="row in data">
+
+            <h3><a href="/#/{$ row.slug $}-{$ row.id $}">{$ row.title $}</a></h3>
+            <span>{$ row.date_created | date:"MM/dd/yyyy @ H:mm"$}</span>
+
+    </div>
+
+</div>
+

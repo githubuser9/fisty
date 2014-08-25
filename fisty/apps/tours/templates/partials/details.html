@@ -1,0 +1,23 @@
+<div ng-controller="DetailCtrl">
+
+    <h1>{$ data.title $}</h1>
+
+    <p><span>{$ data.date_created | date:"MM/dd/yyyy @ H:mm"$}</span></p>
+
+    <div class="tags-span">
+        <strong>Тэги: </strong>
+        <span ng-repeat="tag in data.tags">
+            <a href="/#/tag/{$ tag $}">{$ tag $}</a>&nbsp;
+        </span>
+    </div>
+
+    <hr/>
+
+    <img ng-src="{$ data.image ? ('/media/' + data.image) : null $}" width="750"/>
+
+    <hr/>
+
+    <div class="body" ng-bind-html="data.content">
+    </div>
+
+</div>
