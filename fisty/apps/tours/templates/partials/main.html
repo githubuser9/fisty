@@ -30,8 +30,8 @@
     <ul class="pager">
 
         <div ng-if="next && previous">
-            <li class="previous"><a ng-click='previousPage()' href="#">&larr; Назад</a></li>
-            <li class="next"><a ng-click='nextPage()' href="#">&larr; Дальше</a></li>
+            <li class="previous"><a ng-click='previousPage()' ng-href="#/">&larr; Назад</a></li>
+            <li class="next"><a ng-click='nextPage()' ng-href="#/">Дальше &rarr;</a></li>
         </div>
         <div ng-if="previous && !next">
             <li class="previous"><a ng-click='previousPage()' ng-href="#/">&larr; Назад</a></li>

@@ -41,10 +41,9 @@ angular.module('ToursApp.controllers', [])
             };
 
             $scope.nextPage = function () {
-                if ($scope.main.page < $scope.main.pages) {
                     $scope.main.page++;
                     $scope.loadPage();
-                }
+
             };
 
             $scope.previousPage = function () {
