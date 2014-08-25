@@ -3,7 +3,7 @@
     <div ng-repeat="post in data">
 
         <h2>
-            <a href="#/{$ post.slug $}-{$ post.id $}">{$ post.title $}</a>
+            <a href="/#!/{$ post.slug $}-{$ post.id $}">{$ post.title $}</a>
         </h2>
 
         <p>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="read-full">
-            <a class="btn btn-default" href="#/{$ post.slug $}-{$ post.id $}">Читать</a>
+            <a class="btn btn-default" href="/#!/{$ post.slug $}-{$ post.id $}">Читать</a>
         </div>
 
 
@@ -30,14 +30,14 @@
     <ul class="pager">
 
         <div ng-if="next && previous">
-            <li class="previous"><a ng-click='previousPage()' ng-href="#/">&larr; Назад</a></li>
-            <li class="next"><a ng-click='nextPage()' ng-href="#/">Дальше &rarr;</a></li>
+            <li class="previous"><a ng-click='previousPage()' ng-href="/#!/">&larr; Назад</a></li>
+            <li class="next"><a ng-click='nextPage()' ng-href="/#!/">Дальше &rarr;</a></li>
         </div>
         <div ng-if="previous && !next">
-            <li class="previous"><a ng-click='previousPage()' ng-href="#/">&larr; Назад</a></li>
+            <li class="previous"><a ng-click='previousPage()' ng-href="/#!/">&larr; Назад</a></li>
         </div>
         <div ng-if="next && !previous">
-            <li class="next"><a ng-click='nextPage()' ng-href="#/">Дальше &rarr;</a></li>
+            <li class="next"><a ng-click='nextPage()' ng-href="/#!/">Дальше &rarr;</a></li>
         </div>
 
     </ul>

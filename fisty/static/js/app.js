@@ -6,7 +6,11 @@ angular.module('ToursApp', [
     'ngRoute', 'djangular', 'ngSanitize', 'ngAnimate', 'chieffancypants.loadingBar',
     'ToursApp.filters', 'ToursApp.services', 'ToursApp.directives', 'ToursApp.controllers',
 ]).config([
-    '$routeProvider', function ($routeProvider) {
+    '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+		
+		$locationProvider.html5Mode(false);
+		$locationProvider.hashPrefix('!');
+
         $routeProvider.when('/', {
             templateUrl: '/partials/main.html', controller: 'MainCtrl',
             pageTitle: 'Fisty.Ru | Горячие туры | Отдых и туризм | Туристический портал'
@@ -38,7 +42,7 @@ var search_text = $("#search_form");
 search_text.keyup(function(){
     setTimeout(function() {
 		if (search_text.val().length > 2) {
-            window.location.href = "/#/search/" + search_text.val();
-		}
+			window.location.href = "/#!/search/" + search_text.val();
+			}
     }, 1000);
 });
