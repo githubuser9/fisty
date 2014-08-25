@@ -23,7 +23,7 @@ class ArticleDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('id', 'category', 'title', 'date_created', 'date_last_modified', 'slug', 'image', 'tags', 'content', )
+        fields = ('id', 'category', 'title', 'date_created', 'date_last_modified', 'slug', 'image', 'tags', 'preview', 'content', )
 
 
 class SearchSerializer(serializers.ModelSerializer):

@@ -12,12 +12,15 @@
     </div>
 
     <hr/>
+    
+    
+    <div class="preview" ng-bind-html="data.preview">
+    </div>
+    
+    <div class="body" ng-bind-html="data.content">
+    </div>
 
     <img ng-src="{$ data.image ? ('/media/' + data.image) : null $}" width="750"/>
 
-    <hr/>
-
-    <div class="body" ng-bind-html="data.content">
-    </div>
 
 </div>

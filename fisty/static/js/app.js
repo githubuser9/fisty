@@ -36,9 +36,9 @@ angular.module('ToursApp', [
 
 var search_text = $("#search_form");
 search_text.keyup(function(){
-    if (search_text.val().length > 2) {
-        setTimeout(function() {
+    setTimeout(function() {
+		if (search_text.val().length > 2) {
             window.location.href = "/#/search/" + search_text.val();
-        }, 1000);
-    }
+		}
+    }, 1000);
 });

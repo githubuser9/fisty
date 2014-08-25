@@ -20,13 +20,16 @@
             </div>
 
             <hr/>
+            
+            <div class="preview" ng-bind-html="row.preview">
+            </div>
+            
+            <div class="body" ng-bind-html="row.content">
+            </div>
 
             <img ng-src="{$ row.image ? ('/media/' + row.image) : null $}" width="750"/>
 
-            <hr/>
 
-            <div class="body" ng-bind-html="row.content">
-            </div>
 
         </div>
 

@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from rest_framework import routers
 from apps.tours import views
+from django.http import HttpResponse
 import settings
 
 admin.autodiscover()
@@ -10,7 +11,6 @@ router = routers.DefaultRouter()
 router.register(r'categories', views.CategoryViewSet)
 router.register(r'articles', views.ArticleViewSet)
 router.register(r'tags', views.TagViewSet)
-
 
 
 partial_patterns = patterns('',
@@ -71,7 +71,8 @@ urlpatterns = patterns('',
                        url(r'^djangular/', include('djangular.urls')),
 
                        url(r'^partials/', include(partial_patterns, namespace='partials')),
-
-
+                       
+                       (r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /admin/", content_type="text/plain"))
+  
 )
 
